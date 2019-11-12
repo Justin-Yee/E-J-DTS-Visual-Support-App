@@ -17,8 +17,13 @@ using namespace std;
 string sample = "username@ejgallo.com";										// Size is 20, @ is at location 8
 string database[100] = 
 	{"kpatel@ejgallo.com", "bkandler@ejgallo.com", "markmcc2950@ejgallo.com", "jyee@ejgallo.com", "test@ejgallo.com"};
+string passwords[100] =
+	{"password", "password1", "password2", "password3"};
+
+// Booleans to check for validity of inputs
 bool validity1 = false;
 bool validity2 = false;
+bool validity3 = false;
 
 // Begin code:
 //------------------------------------------------------------------------------------------------------------
@@ -27,22 +32,62 @@ void error(string err) {
 	cout << "ERROR: " << err << endl;
 }
 
+void passCheck(int n) {
+	int index = n;
+	string password;
+	int i = 0;
+	cout << "Password:\t";
+	cin >> password;
+	if (password.size() == passwords[index].size()) {
+		while (!validity3) {
+			// If no password saved, return error. (Shouldn't be able to get here without a password though)
+			if (passwords[index].empty()) {
+				error("Empty password slot. Invalid username slot.");
+				break;
+			}
+			int size = passwords[index].size();
+			if (password[i] == passwords[index][i]) {
+				i = (i + 1);
+				if (i == size) {
+					validity3 = true;
+					break;
+				}
+			}
+			else {
+				error("Invalid password.");
+				break;
+			}
+		}
+	}
+	else {
+		error("Invalid password.");
+	}
+	
+}
+
 // Checks if the actual username itself is stored in the system
 void nameCheck(string n) {
-	int dbSize = (sizeof(database)) / 32;
+	int dbSize = (sizeof(database)) / 32;										// Size of the entire array of usernames
 	int i = 0;
 	int j = 0;
 	while (!validity2) {
 		// If we reach an empty index of the database that's yet to be assigned a username, exit the program.
 		if (database[j].empty()) {
-			error("Empty slot. Username Not Found");
+			error("Empty slot reached. Username Not Found");
 			break;
 		}
 		int size = database[j].size();
 		if (n[i] == database[j][i]) {
 			i = (i + 1) % size;
 			if (i == size - 12) {
-				validity2 = true;
+				if (!passwords[j].empty()) {
+					validity2 = true;
+					passCheck(j);
+				}
+				else {
+					error("No matching password in system for username entered.");
+					break;
+				}
 			}
 		}
 		else {
@@ -93,7 +138,7 @@ int main(void) {
 	if (validity1) { nameCheck(userName); }
 	
 
-	if (validity1 && validity2) {
+	if (validity1 && validity2 && validity3) {
 		cout << "Success!" << endl;
 	}
 }
