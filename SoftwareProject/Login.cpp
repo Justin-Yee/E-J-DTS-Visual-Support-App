@@ -19,6 +19,9 @@ string database[100] =
 	{"kpatel@ejgallo.com", "bkandler@ejgallo.com", "markmcc2950@ejgallo.com", "jyee@ejgallo.com", "test@ejgallo.com"};
 string passwords[100] =
 	{"password", "password1", "password2", "password3"};
+// 0 = Admin, 1 = Vendor, 2 = Rest
+int classification[100] =
+	{2, 0, 1, 1, 0};
 
 // Booleans to check for validity of inputs
 bool validity1 = false;
@@ -68,25 +71,23 @@ void passCheck(int n) {
 // Checks if the actual username itself is stored in the system
 void nameCheck(string n) {
 	int dbSize = (sizeof(database)) / 32;										// Size of the entire array of usernames
+	bool check = true;
 	int i = 0;
 	int j = 0;
 	while (!validity2) {
-		// If we reach an empty index of the database that's yet to be assigned a username, exit the program.
-		if (database[j].empty()) {
-			error("Empty slot reached. Username Not Found");
-			break;
-		}
 		int size = database[j].size();
-		if (n[i] == database[j][i]) {
-			i = (i + 1) % size;
-			if (i == size - 12) {
-				if (!passwords[j].empty()) {
-					validity2 = true;
-					passCheck(j);
-				}
-				else {
-					error("No matching password in system for username entered.");
-					break;
+		if (database[j].size() == n.size() && database[j][i] == n[i]) {
+			if (n[i] == database[j][i]) {
+				i = (i + 1);
+				if (i == size - 12) {
+					if (!passwords[j].empty()) {
+						validity2 = true;
+						passCheck(j);
+					}
+					else {
+						error("No matching password in system for username entered.");
+						break;
+					}
 				}
 			}
 		}
@@ -95,6 +96,11 @@ void nameCheck(string n) {
 			i = 0;
 			validity2 = false;
 		}
+		// If we reach an empty index of the database that's yet to be assigned a username, exit the program.
+		if (database[j].empty()) {
+			error("Username Not Found");
+			break;
+		}		
 		if (j >= dbSize) { error("Username Not Found."); break; }
 	}
 }
