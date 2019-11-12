@@ -1,7 +1,7 @@
 // Software Engineering CSE 120 UC MERCED FALL 2019
 // Group Members : Bailey Kandler , Mark McCullough , Krishan Patel , Justin Yee
 // E & J Gallo Defect Tracking Support App : Proof of Concept Implementation
-// Last Updated : 09:27, 12 November 2019 
+// Last Updated : 10:10, 12 November 2019 
 
 // Object Oriented Approach to extract Database information into instances of a class in the application
 // As well as running an instance of the login functionality etc.

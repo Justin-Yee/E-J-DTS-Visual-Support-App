@@ -126,6 +126,7 @@
     <ClCompile Include="CreateReport.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="ReportHistory.cpp" />
     <ClCompile Include="ReportList.cpp" />
     <ClCompile Include="User.cpp">
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="CreateReport.h" />
     <ClInclude Include="Login.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="ReportHistory.h" />
     <ClInclude Include="ReportList.h" />
     <ClInclude Include="User.h" />
