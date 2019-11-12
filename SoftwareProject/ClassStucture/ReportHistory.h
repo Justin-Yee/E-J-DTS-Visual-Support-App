@@ -11,6 +11,7 @@
 namespace dbo = Wt::Dbo; // For controlling API functionality
 
 using namespace std;
+#include <iostream>
 
 class ReportHistory
 {
