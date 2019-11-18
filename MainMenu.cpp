@@ -35,18 +35,16 @@ void error(string err) {
 }
 
 void home() {
+	cout << "History: " << his << endl;
 	string selectionTopBar;														// Top Bar selections (Home, Reports, About, Contact)
-	cout << "\nTOP BAR:\n1. Home (Selected)\n2. Reports\n3. Contact\n4. Logout\n\t\t\t";
+	cout << "\nTOP BAR:\n1. Home (Selected)\n2. Reports\n3. Contact\n4. Logout\n";
 	while (selectHome) {
+		cout << "\t\t\t";
 		cin >> selectionTopBar;
-		history[his] = selectionTopBar; his = (his + 1) % 5;
 		// Home
 		if (selectionTopBar == "1") { error("Home currently selected."); }
 		// Reports
-		else if (selectionTopBar == "2") {
-			selectHome = false;	selectReports = true; history[his] = selectionTopBar; his = (his + 1) % 5;
-			cout << history[his] << endl;
-		}
+		else if (selectionTopBar == "2") { selectHome = false;	selectReports = true; history[his] = selectionTopBar; his = (his + 1) % 5; }
 		// Contacts
 		else if (selectionTopBar == "3")	{ selectHome = false;	selectContacts = true; history[his] = selectionTopBar; his = (his + 1) % 5;}
 		// Logout
@@ -57,11 +55,12 @@ void home() {
 }
 
 void reports() {
+	cout << "History: " << his << endl;
 	string selectionTopBar;														// Top Bar selections (Home, Reports, About, Contact)
-	cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n3. Contact\n4. Logout\n\t\t\t";
+	cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n3. Contact\n4. Logout\n";
 	while (selectReports) {
+		cout << "\t\t\t";
 		cin >> selectionTopBar;
-		history[his] = selectionTopBar; his = (his + 1) % 5;
 		// Home
 		if (selectionTopBar == "1")			{ selectReports = false;	selectHome = true; history[his] = selectionTopBar; his = (his + 1) % 5;}
 		// Reports
@@ -69,16 +68,18 @@ void reports() {
 		// Contacts
 		else if (selectionTopBar == "3")	{ selectReports = false;	selectContacts = true; history[his] = selectionTopBar; his = (his + 1) % 5;}
 		// Logout
-		else if (selectionTopBar == "4")	{ selectReports = false;	selectLogout = true; }		
+		else if (selectionTopBar == "4")	{ selectReports = false;	selectLogout = true; }
 		// Invalid Input
 		else { error("Invalid Input"); }
 	}
 }
 
 void contact() {
+	cout << "History: " << his << endl;
 	string selectionTopBar;														// Top Bar selections (Home, Reports, About, Contact)
-	cout << "\nTOP BAR:\n1. Home\n2. Reports\n3. Contact (Selected)\n4. Logout\n\t\t\t";
+	cout << "\nTOP BAR:\n1. Home\n2. Reports\n3. Contact (Selected)\n4. Logout\n";
 	while (selectContacts) {
+		cout << "\t\t\t";
 		cin >> selectionTopBar;
 		// Home
 		if (selectionTopBar == "1")			{ selectContacts = false;	selectHome = true; history[his] = selectionTopBar; his = (his + 1) % 5;}
@@ -94,9 +95,11 @@ void contact() {
 }
 
 void logout() {
+	cout << "History: " << his << endl;
 	string logout;														// Top Bar selections (Home, Reports, About, Contact)
-	cout << "\nAre you sure you would like to Log Out? (Y/N)\n\t\t\t";
+	cout << "\nAre you sure you would like to Log Out? (Y/N)\n";
 	while (selectLogout) {
+		cout << "\t\t\t";
 		cin >> logout;
 		if (logout == "Y" || logout == "y") {
 			selectLogout = false;
@@ -104,15 +107,16 @@ void logout() {
 		}
 		else if (logout == "N" || logout == "n") {
 			debug("Not logging out");
-			if (his = 0) {
-				his = 5;
+			cout << "History (Before): " << history[his] << endl;
+			if (his == 0) {
+				his = 4;
 			}
 			else {
-				his = his - 1;
+				his--;
 			}
-			cout << "History: " << history[his] << endl;
+			cout << "History (After): " << history[his] << endl;
 			if (history[his] == "1") { selectLogout = false; selectHome = true; debug("Going to Home"); }
-			else if (history[his] == "2")	{ selectLogout = false; selectContacts = true; debug("Going to Reports");}
+			else if (history[his] == "2")	{ selectLogout = false; selectReports = true; debug("Going to Reports");}
 			else if (history[his] == "3")	{ selectLogout = false; selectContacts = true; debug("Going to Contacts");}
 			else { error("No history found."); }
 		}
@@ -123,18 +127,10 @@ void logout() {
 
 int main(void) {
 	while (running) {
-		if (selectHome) {
-			home();
-		}
-		if (selectReports) {
-			reports();
-		}
-		if (selectContacts) {
-			contact();
-		}
-		if (selectLogout) {
-			logout();
-		}
+		if (selectHome) { home(); }
+		if (selectReports) { reports(); }
+		if (selectContacts) { contact(); }
+		if (selectLogout) { logout(); }
 	}
 	return 0;
 }
