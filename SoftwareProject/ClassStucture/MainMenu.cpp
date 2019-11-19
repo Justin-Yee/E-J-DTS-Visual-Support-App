@@ -148,13 +148,15 @@ void MainMenu::displayHistory() {
 }
 
 void MainMenu::displayAbout() {
-	cout << current.getEmail() << endl;
-	cout << current.getName() << endl;
+	cout << "Generic Information..." << endl;
+	cout << "[Placeholder Text]" << endl;
 }
 
 void MainMenu::displayContact() {
 	cout << "\nTOP BAR:\n1. Home\n2. Reports\n3. Contact (Selected)\n4. Logout\n";
 	while (selectContacts) {
+		cout << current.getEmail() << endl;
+		cout << current.getName() << endl;
 		cout << "\t\t\t";
 		cin >> selectionTopBar;
 		// TOP BAR SELECTION (Home, Reports, Contacts, Logout)
