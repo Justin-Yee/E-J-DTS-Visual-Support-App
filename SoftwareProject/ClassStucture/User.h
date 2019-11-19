@@ -21,6 +21,7 @@ private:
 public:
 
 	User();
+	User(string currEmail);
 
 	string getName();
 	string getType();

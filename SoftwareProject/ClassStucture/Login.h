@@ -17,6 +17,7 @@ private:
 	bool validity1;
 	bool validity2;
 	bool validity3;
+	string currEmail;
 
 public:
 
@@ -30,6 +31,8 @@ public:
 	void nameCheck(string n);
 	void validityCheck(string v);
 	void passCheck(int n);
+
+	string getCurrUser();
 
 };
 

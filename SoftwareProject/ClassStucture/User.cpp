@@ -1,13 +1,13 @@
 #include "User.h"
 
-User::User() {
-	
+User::User(string currEmail) {
+	email = currEmail;
+	// Extract from Database full info based on email
 	// Set Name, Type, Email, Location with API
 	
 	// Temporary default casting
 	name = "Bailey Kandler";
 	type = Type::Admin;
-	email = "bkandler@ejgallo.com";
 	location = "Merced";
 		
 }
