@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_MAINMENU
+#define TT_MAINMENU
 
 using namespace std;
 #include <iostream>
@@ -43,3 +44,4 @@ public:
 
 };
 
+#endif

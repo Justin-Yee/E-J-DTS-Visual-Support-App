@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_USER
+#define TT_USER
 
 #include <string>
 
@@ -31,3 +32,4 @@ public:
 	void updateLocation();
 };
 
+#endif

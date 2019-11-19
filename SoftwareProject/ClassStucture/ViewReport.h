@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_VIEWREPORT
+#define TT_VIEWREPORT
 
 #include <string>
 #include <ctime>
@@ -52,3 +53,4 @@ public:
 	void printFullReport(); 
 };
 
+#endif // !TT_VIEWREPORT

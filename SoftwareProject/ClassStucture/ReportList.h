@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_REPORTLIST
+#define TT_REPORTLIST
 
 #include "ViewReport.h"
 #include "User.h"
@@ -26,3 +27,4 @@ public:
 	void printList();
 };
 
+#endif

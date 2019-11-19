@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_REPORTHISTORY
+#define TT_REPORTHISTORY
 
 #include "ViewReport.h"
 #include "User.h"
@@ -26,4 +27,6 @@ public:
 
 	void printHistory();
 };
+
+#endif // !TT_REPORTHISTORY
 

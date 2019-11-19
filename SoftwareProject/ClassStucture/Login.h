@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_LOGIN
+#define TT_LOGIN
 
 #include <Wt/Dbo/Dbo.h> // WebToolKit Connection for API Incorporation with SQL Database
 namespace dbo = Wt::Dbo; // For controlling API functionality
@@ -33,3 +34,4 @@ public:
 
 };
 
+#endif
