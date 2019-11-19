@@ -8,18 +8,21 @@ using namespace std;
 /*
 	MAIN MENU (After Login):
 		1. Home
-			a. Submit Report
-			b. Existing Reports
+			a. Upcoming Reports (What's due within the next n-days)
+			b. 
 			c. About
 		2. Reports
+			a. Submit Report
+			b. Existing Reports
+			c. Historical Data
 		3. Contact
 		4. Logout
 */
 
 // Top bar checks and their associated checks
 bool running = true;															// While active, program runs. Return 0 once it's inactive
-bool selectHome = true, subReport = false, exReport = false, abt = false;
-bool selectReports = false;
+bool selectHome = true, urgReport = false, abt = false;
+bool selectReports = false, subReport = false, exReport = false;
 bool selectLogout = false;
 bool selectContacts = false;
 
@@ -31,8 +34,57 @@ void error(string err) { cout << "ERROR: " << err << endl; }					// Error statem
 
 void home() {
 	string selectionTopBar;														// Top Bar selections (Home, Reports, About, Contact)
-	cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+	cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
 	while (selectHome) {
+		// UPCOMING REPORTS
+		if (urgReport) {
+			debug("List of Top 3 Upcoming Reports Here...");
+			/*
+				We'll declare our report-specific variables here.
+				When we reach the end, we'll have a confirmation option to confirm the report has been filled out as desired.
+				Once confirmed, subReport = false and we print out the selectHome selection menu again.
+			*/
+			urgReport = false;
+			history[his] = "1"; his = (his + 1) % maxHistory;
+			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+		}
+		// ABOUT INFORMATION
+		if (abt) {
+			debug("About information...");
+			/*
+				We'll discuss what to put here.
+				Some version number, company name, not much to put here.
+			*/
+			abt = false;
+			history[his] = "1"; his = (his + 1) % maxHistory;
+			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+		}
+
+		// User input of where to navigate to
+		cout << "\t\t\t";
+		cin >> selectionTopBar;
+		// TOP BAR SELECTION (Home, Reports, Contacts, Logout)
+		// Home
+		if (selectionTopBar == "1") { error("Home currently selected."); }
+		// Reports
+		else if (selectionTopBar == "2") { selectHome = false;	selectReports = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		// Contacts
+		else if (selectionTopBar == "3") { selectHome = false;	selectContacts = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		// Logout
+		else if (selectionTopBar == "4") { selectHome = false;	selectLogout = true; }
+
+		// HOME SCREEN SELECTION (Submit Report, Existing Reports, About)
+		else if (selectionTopBar == "a") { urgReport = true;							history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		else if (selectionTopBar == "c") { abt = true;									history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		// Invalid Input
+		else { error("Invalid Input"); }
+	}
+}
+
+void reports() {
+	string selectionTopBar;														// Top Bar selections (Home, Reports, About, Contact)
+	cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n3. Contact\n4. Logout\n";
+	while (selectReports) {
 		// SUBMIT REPORTS
 		if (subReport) {
 			debug("Fill in New Reports Here...");
@@ -42,8 +94,8 @@ void home() {
 				Once confirmed, subReport = false and we print out the selectHome selection menu again.
 			*/
 			subReport = false;
-			history[his] = "1"; his = (his + 1) % maxHistory;
-			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			history[his] = "2"; his = (his + 1) % maxHistory;
+			cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n3. Contact\n4. Logout\n";
 		}
 		// EXISTING REPORTS
 		else if (exReport) {
@@ -68,58 +120,23 @@ void home() {
 				Once we're done, at any point we can push an 'exit' button to go back to the selectHome selection menu again
 			*/
 			exReport = false;
-			history[his] = "1"; his = (his + 1) % maxHistory;
-			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			history[his] = "2"; his = (his + 1) % maxHistory;
+			cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n3. Contact\n4. Logout\n";
 		}
-		// ABOUT INFORMATION
-		else if (abt) {
-			debug("About information...");
-			/*
-				We'll discuss what to put here.
-				Some version number, company name, not much to put here.
-			*/
-			abt = false;
-			history[his] = "1"; his = (his + 1) % maxHistory;
-			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
-		}
-
-		// User input of where to navigate to
 		cout << "\t\t\t";
 		cin >> selectionTopBar;
 		// TOP BAR SELECTION (Home, Reports, Contacts, Logout)
 		// Home
-		if (selectionTopBar == "1")			{ error("Home currently selected."); }
+		if (selectionTopBar == "1") { selectReports = false;	selectHome = true;		history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		// Reports
-		else if (selectionTopBar == "2")	{ selectHome = false;	selectReports = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		else if (selectionTopBar == "2") { error("Reports currently selected."); }
 		// Contacts
-		else if (selectionTopBar == "3")	{ selectHome = false;	selectContacts = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		else if (selectionTopBar == "3") { selectReports = false;	selectContacts = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		// Logout
-		else if (selectionTopBar == "4")	{ selectHome = false;	selectLogout = true; }
-
-		// HOME SCREEN SELECTION (Submit Report, Existing Reports, About)
-		else if (selectionTopBar == "a")	{ subReport = true;								history[his] = selectionTopBar;	his = (his + 1) % maxHistory; }
-		else if (selectionTopBar == "b")	{ exReport = true;								history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
-		else if (selectionTopBar == "c")	{ abt = true;									history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
-		// Invalid Input
-		else { error("Invalid Input"); }
-	}	
-}
-
-void reports() {
-	string selectionTopBar;														// Top Bar selections (Home, Reports, About, Contact)
-	cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n3. Contact\n4. Logout\n";
-	while (selectReports) {
-		cout << "\t\t\t";
-		cin >> selectionTopBar;
-		// TOP BAR SELECTION (Home, Reports, Contacts, Logout)
-		// Home
-		if (selectionTopBar == "1")			{ selectReports = false;	selectHome = true;		history[his] = selectionTopBar; his = (his + 1) % maxHistory;}
-		// Reports
-		else if (selectionTopBar == "2")	{ error("Reports currently selected."); }
-		// Contacts
-		else if (selectionTopBar == "3")	{ selectReports = false;	selectContacts = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory;}
-		// Logout
-		else if (selectionTopBar == "4")	{ selectReports = false;	selectLogout = true; }
+		else if (selectionTopBar == "4") { selectReports = false;	selectLogout = true; }
+		// REPORTS SCREEN (Submit Reports, Existing Reports)
+		else if (selectionTopBar == "a") { subReport = true;							history[his] = selectionTopBar;	his = (his + 1) % maxHistory; }
+		else if (selectionTopBar == "b") { exReport = true;								history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		// Invalid Input
 		else { error("Invalid Input"); }
 	}
@@ -133,13 +150,13 @@ void contact() {
 		cin >> selectionTopBar;
 		// TOP BAR SELECTION (Home, Reports, Contacts, Logout)
 		// Home
-		if (selectionTopBar == "1")			{ selectContacts = false;	selectHome = true;		history[his] = selectionTopBar; his = (his + 1) % maxHistory;}
+		if (selectionTopBar == "1") { selectContacts = false;	selectHome = true;		history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		// Reports
-		else if (selectionTopBar == "2")	{ selectContacts = false;	selectReports = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory;}
+		else if (selectionTopBar == "2") { selectContacts = false;	selectReports = true;	history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		// Contacts
-		else if (selectionTopBar == "3")	{ error("Contacts currently selected."); }
+		else if (selectionTopBar == "3") { error("Contacts currently selected."); }
 		// Logout
-		else if (selectionTopBar == "4")	{ selectContacts = false;	selectLogout = true; }
+		else if (selectionTopBar == "4") { selectContacts = false;	selectLogout = true; }
 		// Invalid Input
 		else { error("Invalid Input"); }
 	}
@@ -165,8 +182,8 @@ void logout() {
 				his--;
 			}
 			if (history[his] == "1") { selectLogout = false; selectHome = true; debug("Going to Home"); }
-			else if (history[his] == "2")	{ selectLogout = false; selectReports = true; debug("Going to Reports");}
-			else if (history[his] == "3")	{ selectLogout = false; selectContacts = true; debug("Going to Contacts");}
+			else if (history[his] == "2") { selectLogout = false; selectReports = true; debug("Going to Reports"); }
+			else if (history[his] == "3") { selectLogout = false; selectContacts = true; debug("Going to Contacts"); }
 			else { error("No history found."); }
 		}
 		// Invalid Input
