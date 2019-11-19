@@ -50,10 +50,11 @@ int main() {
 	/*
 	MAIN MENU (After Login):
 		1. Home
-			a. Submit Report
-			b. Existing Reports
+			a. Urgent Reports
 			c. About
 		2. Reports
+			a. Submit Report
+			b. Existing Reports
 		3. Contact
 		4. Logout
 	*/
