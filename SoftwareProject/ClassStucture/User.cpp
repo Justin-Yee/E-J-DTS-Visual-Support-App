@@ -2,13 +2,13 @@
 
 User::User(string currEmail) {
 	email = currEmail;
+
 	// Extract from Database full info based on email
-	// Set Name, Type, Email, Location with API
-	
-	// Temporary default casting
-	name = "Bailey Kandler";
-	type = Type::Admin;
-	location = "Merced";
+	User* x = call.retrieveUser(email);
+
+	name = x->getName();
+	type = x->getType();
+	location = x->getLocation();
 		
 }
 
@@ -17,15 +17,7 @@ string User::getName() {
 }
 
 string User::getType() {
-	if (type == Type::Admin) {
-		return "Admin";
-	}
-	else if (type == Type::Vendor) {
-		return "Vendor";
-	}
-	else if (type == Type::Employee) {
-		return "Employee";
-	}
+	return type;
 }
 
 string User::getEmail() {
@@ -44,4 +36,9 @@ void User::updateType() {
 void User::updateLocation() {
 	// Optional update functionality to alter database info
 	// Use API to update the database
+}
+
+User* User::operator=(User const& x) {
+	User* y = new User(x.email);
+	return y;
 }

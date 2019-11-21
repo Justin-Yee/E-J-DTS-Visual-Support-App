@@ -3,17 +3,14 @@
 #include <string>
 #include <ctime>
 
-#include <Wt/Dbo/Dbo.h> // WebToolKit Connection for API Incorporation with SQL Database
-namespace dbo = Wt::Dbo; // For controlling API functionality
+#include "DBConn.h"
 
 using namespace std;
 #include <iostream>
 
 class CreateReport
 {
-private:
-	enum class Status { Open, UnderReview, SupplierAction, Closed };
-
+public:
 	int dtsID;
 	int workOrderNumber;
 	string materialGroup;
@@ -27,7 +24,10 @@ private:
 	int itemNumber;
 	string causeComment;
 	string actionComment;
-	Status reportStatus;
+	string reportStatus;
+private:
+
+	DBConn call;
 
 public:
 
@@ -46,7 +46,7 @@ public:
 	void setItemNum(int num);
 	void setCauseComm(string cause);
 	void setActComm(string action);
-	void setStatus(CreateReport::Status st);
+	void setStatus(string st);
 
 	void inputReportInfo();
 	void pushToDB();

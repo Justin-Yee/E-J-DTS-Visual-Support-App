@@ -2,24 +2,25 @@
 
 ViewReport::ViewReport(int currID) {
 	// Extract Report Details from the Database through the API
-	
-	// Temporary Initializing 
 	dtsID = currID;
-	workOrderNumber = 123456789;
-	materialGroup = "Label";
-	defectName = "Splice Issues";
-	machineLine = 12;
-	incidentDate.tm_mday = 6; // Day of Month
-	incidentDate.tm_mon = 11; // Month of Year
-	incidentDate.tm_year = 2019; // Year
-	incidentClassification = "Hold";
-	defectClassification = "Minor";
-	defectSeverity = "Operational";
-	supplierName = "Corp A";
-	itemNumber = 12345;
-	causeComment = "Defective Component";
-	actionComment = "Return Item(s) to Supplier";
-	reportStatus = Status::Open;
+
+	ViewReport* x = call.retrieveReportInfo(dtsID);
+
+	workOrderNumber = x->getWON();
+	materialGroup = x->getMatGroup();
+	defectName = x->getDefName();
+	machineLine = x->getMachLine();
+	incidentDate.tm_mday = x->getDate().tm_mday;
+	incidentDate.tm_mon = x->getDate().tm_mon;
+	incidentDate.tm_year = x->getDate().tm_year;
+	incidentClassification = x->getIncClass();
+	defectClassification = x->getDefClass();
+	defectSeverity = x->getDefSev();
+	supplierName = x->getSupplier();
+	itemNumber = x->getItemNum();
+	causeComment = x->getCauseComm();
+	actionComment = x->getActComm();
+	reportStatus = x->getStatus();
 }
 
 int ViewReport::getID() {
@@ -75,18 +76,7 @@ string ViewReport::getActComm() {
 }
 
 string ViewReport::getStatus() {
-	if (reportStatus == Status::Open) {
-		return "Open";
-	}
-	else if (reportStatus == Status::UnderReview) {
-		return "Under Review";
-	}
-	else if (reportStatus == Status::SupplierAction) {
-		return "Supplier ";
-	}
-	else if (reportStatus == Status::Closed) {
-		return "Closed";
-	}
+	return reportStatus;
 }
 
 void ViewReport::printBriefReport() {
@@ -116,4 +106,9 @@ void ViewReport::printFullReport() {
 	cout << "Suggested Action :\t\t" << actionComment << endl;
 
 	cout << "********************" << endl;
+}
+
+ViewReport* ViewReport::operator=(ViewReport const& x) {
+	ViewReport* y = new ViewReport(x.dtsID);
+	return y;
 }

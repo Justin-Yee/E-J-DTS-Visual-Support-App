@@ -18,7 +18,7 @@ CreateReport::CreateReport() {
 	itemNumber = 12345;
 	causeComment = "Empty";
 	actionComment = "Empty";
-	reportStatus = Status::Open;
+	reportStatus = "Open";
 }
 
 void CreateReport::setID(int id) {
@@ -75,7 +75,7 @@ void CreateReport::setActComm(string action) {
 	actionComment = action;
 }
 
-void CreateReport::setStatus(CreateReport::Status st) {
+void CreateReport::setStatus(string st) {
 	reportStatus = st;
 }
 
@@ -87,5 +87,5 @@ void CreateReport::inputReportInfo() {
 
 void CreateReport::pushToDB() {
 	// Use API to apply the insert function to add to the Database
-
+	call.insertReportInfo(this);
 }

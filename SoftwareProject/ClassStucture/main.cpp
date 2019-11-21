@@ -6,16 +6,13 @@
 // Object Oriented Approach to extract Database information into instances of a class in the application
 // As well as running an instance of the login functionality etc.
 
-
-#include <Wt/Dbo/Dbo.h> // WebToolKit Connection for API Incorporation with SQL Database
-namespace dbo = Wt::Dbo; // For controlling API functionality
-
 using namespace std;
 #include <iostream>
 #include <string>
 #include <ctime>
 
 #include "CreateReport.h"
+#include "DBConn.h"
 #include "Login.h"
 #include "MainMenu.h"
 #include "ReportHistory.h"

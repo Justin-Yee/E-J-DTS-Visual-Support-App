@@ -1,7 +1,6 @@
 #pragma once
 
-#include <Wt/Dbo/Dbo.h> // WebToolKit Connection for API Incorporation with SQL Database
-namespace dbo = Wt::Dbo; // For controlling API functionality
+#include "DBConn.h"
 
 using namespace std;
 #include <iostream>
