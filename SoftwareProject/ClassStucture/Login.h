@@ -1,7 +1,6 @@
 #pragma once
 
-#include <Wt/Dbo/Dbo.h> // WebToolKit Connection for API Incorporation with SQL Database
-namespace dbo = Wt::Dbo; // For controlling API functionality
+#include "DBConn.h"
 
 using namespace std;
 #include <iostream>
@@ -17,6 +16,7 @@ private:
 	bool validity1;
 	bool validity2;
 	bool validity3;
+	string currEmail;
 
 public:
 
@@ -30,6 +30,8 @@ public:
 	void nameCheck(string n);
 	void validityCheck(string v);
 	void passCheck(int n);
+
+	string getCurrUser();
 
 };
 

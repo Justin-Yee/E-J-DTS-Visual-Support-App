@@ -48,6 +48,7 @@ void Login::nameCheck(string n) {
 				if (i == size - 12) {
 					if (!passwords[j].empty()) {
 						validity2 = true;
+						currEmail = database[j];
 						passCheck(j);
 					}
 					else {
@@ -122,4 +123,8 @@ void Login::passCheck(int n) {
 	else {
 		error("Ivalid Password.");
 	}
+}
+
+string Login::getCurrUser() {
+	return currEmail;
 }

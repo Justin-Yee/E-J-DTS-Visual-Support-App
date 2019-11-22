@@ -1,5 +1,6 @@
 #pragma once
-
+#include "DBConn.h"
+#include "User.h"
 using namespace std;
 #include <iostream>
 #include <string>
@@ -7,39 +8,38 @@ using namespace std;
 class MainMenu
 {
 public: 
-	enum class Screens
-	{
-		Main,
-		CreateReport,
-		ReportList,
-		ViewReport,
-		ReportHistory,
-		About,
-		Contact,
-		Logout
-	};
+	bool running;
+	bool selectHome;
+	bool selectReports;
+	bool selectLogout;
+	bool selectContacts;
+
 private:
-	Screens current;
-	Screens previous[5];
-	int index;
+	bool subReport;
+	bool exReport;
+	bool urgReport;
+	bool abt;
+	int his;
+	int maxHistory;
+	string history[1];
+	string selectionTopBar;
+	User current;
 
 public:
 
-	MainMenu();
+	MainMenu(User x);
 
 	void debug(string d);
 	void error(string err);
-	void displayScreen(Screens s);
-	void displayTopBar();
 	void displayMain();
 	void displayCreate();
 	void displayList();
+	void displayUrgList();
 	void displayReport();
 	void displayHistory();
 	void displayAbout();
 	void displayContact();
 	void displayLogout();
-	void returnToPrior();
 
 };
 
