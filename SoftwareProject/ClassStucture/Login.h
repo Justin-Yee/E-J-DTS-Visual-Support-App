@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_LOGIN
+#define TT_LOGIN
 
 #include "DBConn.h"
 
@@ -35,3 +36,4 @@ public:
 
 };
 
+#endif

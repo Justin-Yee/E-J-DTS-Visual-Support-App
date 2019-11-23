@@ -1,6 +1,10 @@
-#pragma once
+
+#ifndef TT_MAINMENU
+#define TT_MAINMENU
+
 #include "DBConn.h"
 #include "User.h"
+
 using namespace std;
 #include <iostream>
 #include <string>
@@ -43,3 +47,4 @@ public:
 
 };
 
+#endif

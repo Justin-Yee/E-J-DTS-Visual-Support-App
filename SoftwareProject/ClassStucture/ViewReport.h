@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_VIEWREPORT
+#define TT_VIEWREPORT
 
 #include <string>
 #include <ctime>
@@ -54,3 +55,4 @@ public:
 	ViewReport* operator=(ViewReport const& x);
 };
 
+#endif // !TT_VIEWREPORT
