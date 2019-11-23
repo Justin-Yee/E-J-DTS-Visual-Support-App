@@ -5,8 +5,12 @@ ReportHistory::ReportHistory(int currItemNum, User currUser) {
 	// User Location and Type determine lists to be viewed 
 	// Narrowed down by the Item Number for which we want to view the history
 
-	curr = currUser;
+	curr = &currUser;
 	currItem = currItemNum;
+
+	ReportHistory* x = call.generateReportHistory(currItem, curr);
+
+	list = x->list;
 }
 
 void ReportHistory::printHistory() {
@@ -17,7 +21,7 @@ void ReportHistory::printHistory() {
 	cout << "Item Number :\t\t" << currItem << endl;
 	cout << "Supplier :\t\t" << list[0].getSupplier() << "\t\tMachine Line :\t\t" << list[0].getMachLine() << endl;
 
-	// **Iterate Here**
+	/* Iterate Here */
 
 	cout << "********************" << endl;
 }

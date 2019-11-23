@@ -2,26 +2,28 @@
 #define TT_USER
 
 #include <string>
+#include "DBConn.h"
 
-#include <Wt/Dbo/Dbo.h> // WebToolKit Connection for API Incorporation with SQL Database
-namespace dbo = Wt::Dbo; // For controlling API functionality
 
 using namespace std;
 #include <iostream>
 
 class User
 {
-private:
-	enum class Type { Admin, Vendor, Employee };
-
+public:
 	string name;
-	Type type;
-	string email; 
+	string type;
 	string location;
 
+private:
+	
+	DBConn call;
+	string email; 
+	
 public:
 
 	User();
+	User(string currEmail);
 
 	string getName();
 	string getType();
@@ -30,6 +32,8 @@ public:
 
 	void updateType();
 	void updateLocation();
+
+	User* operator=(User const& x);
 };
 
 #endif

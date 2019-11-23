@@ -3,28 +3,32 @@
 
 #include "ViewReport.h"
 #include "User.h"
+#include "DBConn.h"
 
 #include <vector>
 #include <string>
 #include <ctime>
-
-#include <Wt/Dbo/Dbo.h> // WebToolKit Connection for API Incorporation with SQL Database
-namespace dbo = Wt::Dbo; // For controlling API functionality
 
 using namespace std;
 #include <iostream>
 
 class ReportList
 {
-private:
-	User curr;
+public:
+
 	vector<ViewReport> list;
+
+private:
+	User* curr;
+
+	DBConn call;
 
 public:
 
-	ReportList();
+	ReportList(User* c);
 
 	void printList();
+
 };
 
 #endif
