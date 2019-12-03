@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_CREATEREPORT
+#define TT_CREATEREPORT
 
 #include <string>
 #include <ctime>
@@ -52,3 +53,4 @@ public:
 	void pushToDB();
 };
 
+#endif

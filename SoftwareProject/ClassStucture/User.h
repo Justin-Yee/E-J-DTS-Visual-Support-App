@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TT_USER
+#define TT_USER
 
 #include <string>
 #include "DBConn.h"
@@ -35,3 +36,4 @@ public:
 	User* operator=(User const& x);
 };
 
+#endif

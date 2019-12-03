@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewExistingReports">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#236D94"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:padding="@dimen/appbar_padding"
+            android:text="DTS Trouble Tracker"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:textColor="#FFFFFF" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#236D94"
+            app:tabIndicatorColor="#FFFFFF">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/SortSever"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/severity" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/SortDescrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/SortDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF0000">
+
+                <EditText
+                    android:id="@+id/severity3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="*High"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/description3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Glass"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/date3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/8/19"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF0000">
+
+                <EditText
+                    android:id="@+id/severity3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="High"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/description3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Glass"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/date3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/9/19"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF0000">
+
+                <EditText
+                    android:id="@+id/severity3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="High"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/description3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Glass"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/date3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/9/19"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF0000">
+
+                <EditText
+                    android:id="@+id/severity3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="High"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/description3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Glass"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/date3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/12/19"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF0000">
+
+                <EditText
+                    android:id="@+id/Severity"
+                    android:layout_width="80dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="High"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/Description"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Glass "
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/Date"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/14/19"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFEB3B">
+
+                <EditText
+                    android:id="@+id/SortSever"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Medium"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/SortDescrip"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Wrong Product"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/SortDate"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/10/19"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFEB3B">
+
+                <EditText
+                    android:id="@+id/severity2"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Medium"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/description2"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Wrong Material"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/date2"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/16/19"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#68FF00">
+
+                <EditText
+                    android:id="@+id/severity3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Low"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/description3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Wrong Cap"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/date3"
+                    android:layout_width="130"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="8/4/19"
+                    android:textSize="24sp" />
+            </TableRow>
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="#236D94"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
