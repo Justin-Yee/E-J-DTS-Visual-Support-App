@@ -7,10 +7,17 @@
     tools:context=".ViewExistingReports">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#236D94"
         android:theme="@style/AppTheme.AppBarOverlay">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:text="Back" />
 
         <TextView
             android:id="@+id/title"
@@ -48,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:text="Date" />
         </com.google.android.material.tabs.TabLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
