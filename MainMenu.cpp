@@ -85,28 +85,43 @@ void home() {
 			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
 		}
 		// CHANGE PASSWORD
-		/*else if (passChange) {
+		else if (passChange) {
 			string change;
 			debug("Change your password...");
 			cout << "Would you like to change your password? (Y/N)" << endl;
 			cin >> change;
 			if (change == "Y" || change == "y") {
 				string password;
+				string password2;
+				string password3;
 				debug("Changing password!");
 				cout << "Please enter current password:\t";
 				cin >> password;
-				for (int i = 0; i < passwords->size(); i++) {
-					if (passwords[i] == password {
-						debug("Password match!");
+				affine_encode(password);
+				password = encoded;
+				bool passMatch = false;
+				if (passwords[i] == password) {
+					debug("Password match!");
+					passMatch = true;
+					if (passMatch) {
+						cout << "Please enter your new password:\t";
+						cin >> password2;
+						cout << "Please re-enter your new password:\t";
+						cin >> password3;
+						if (password2 == password3) {
+							affine_encode(password2);
+							password2 = encoded;
+							password2 = passwords[index];
+						}
 					}
-				}
+				}				
 			}
 			else if (change == "N" || change == "n") {
 				debug("Not changing password...");
 				passChange = false;
 				cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
 			}
-		}*/
+		}
 		// ABOUT INFORMATION
 		else if (abt) {
 			debug("About information...");
@@ -252,19 +267,6 @@ void logout() {
 }
 
 int main(void) {
-	// Encode passwords stored in system
-	for (int i = 0; i < passwords->size(); i++) {
-		// If we reach an empty index, stop searching
-		if (passwords[i].empty()) {
-			break;
-		}
-		else {
-			affine_encode(passwords[i]);										// Encode the passwords
-			passwords[i] = encoded;												// Save the new passwords into the original array
-			//debug(passwords[i]);												// Debug way to verify encoded passwords match what we have in system
-		}
-	}
-
 	while (running) {
 		if (selectHome) { home(); }
 		else if (selectReports) { reports(); }
