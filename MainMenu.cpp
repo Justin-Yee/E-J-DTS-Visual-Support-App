@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
-#include <vector>
 
 using namespace std;
-
 /*
 	MAIN MENU (After Login):
 		1. Home
 			a. Upcoming Reports (What's due within the next n-days)
-			b. 
+			b. Change Password
 			c. About
 		2. Reports
 			a. Submit Report
@@ -19,9 +17,17 @@ using namespace std;
 		4. Logout
 */
 
+// For changing passwords (dummy in this case, will be connected to Database in real-use case
+string database[100] =
+{ "kpatel@ejgallo.com", "bkandler@ejgallo.com", "markmcc2950@ejgallo.com", "jyee@ejgallo.com", "test@ejgallo.com" };
+string passwords[100] =
+{ "password", "password1", "password2", "password3" };
+// String variable for encoding
+string encoded;
+
 // Top bar checks and their associated checks
 bool running = true;															// While active, program runs. Return 0 once it's inactive
-bool selectHome = true, urgReport = false, abt = false;
+bool selectHome = true, urgReport = false, passChange = false; abt = false;
 bool selectReports = false, subReport = false, exReport = false;
 bool selectLogout = false;
 bool selectContacts = false;
@@ -32,6 +38,36 @@ string history[1];
 void debug(string dbg) { cout << "DEBUG: " << dbg << endl; }					// Debug statements
 void error(string err) { cout << "ERROR: " << err << endl; }					// Error statements
 
+// For encoding passwords and checking against stored passwords (a = 7, b = 23, m = 89)
+string affine_encode(string plaintext) {
+	int a = 7;
+	int b = 23;
+	int m = 89;
+	// Convert string to const char and find the size
+	string text = plaintext.data();
+	int size = text.length();
+	encoded.resize(size);
+
+	int intText[size];
+	int encText[size];
+
+	for (int i = 0; i < size; i++) {
+		if (text[i] != ' ') {
+			encText[i] = ((((int(text[i]) - 33) * a + b) % m) + 33);
+		}
+		else {
+			encText[i] = text[i];
+		}
+	}
+	char encrypted[size];
+
+	for (int i = 0; i < size; i++) {
+		encrypted[i] = char(encText[i]);
+		encoded[i] = encrypted[i];
+	}
+
+	return encrypted;
+}
 void home() {
 	string selectionTopBar;														// Top Bar selections (Home, Reports, About, Contact)
 	cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
@@ -46,10 +82,48 @@ void home() {
 			*/
 			urgReport = false;
 			history[his] = "1"; his = (his + 1) % maxHistory;
-			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+		}
+		// CHANGE PASSWORD
+		else if (passChange) {
+			string change;
+			debug("Change your password...");
+			cout << "Would you like to change your password? (Y/N)" << endl;
+			cin >> change;
+			if (change == "Y" || change == "y") {
+				string password;
+				string password2;
+				string password3;
+				debug("Changing password!");
+				cout << "Please enter current password:\t";
+				cin >> password;
+				affine_encode(password);
+				password = encoded;
+				bool passMatch = false;
+				if (passwords[i] == password) {
+					debug("Password match!");
+					passMatch = true;
+					if (passMatch) {
+						cout << "Please enter your new password:\t";
+						cin >> password2;
+						cout << "Please re-enter your new password:\t";
+						cin >> password3;
+						if (password2 == password3) {
+							affine_encode(password2);
+							password2 = encoded;
+							password2 = passwords[index];
+						}
+					}
+				}				
+			}
+			else if (change == "N" || change == "n") {
+				debug("Not changing password...");
+				passChange = false;
+				cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			}
 		}
 		// ABOUT INFORMATION
-		if (abt) {
+		else if (abt) {
 			debug("About information...");
 			/*
 				We'll discuss what to put here.
@@ -57,7 +131,7 @@ void home() {
 			*/
 			abt = false;
 			history[his] = "1"; his = (his + 1) % maxHistory;
-			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
 		}
 
 		// User input of where to navigate to
@@ -73,8 +147,9 @@ void home() {
 		// Logout
 		else if (selectionTopBar == "4") { selectHome = false;	selectLogout = true; }
 
-		// HOME SCREEN SELECTION (Submit Report, Existing Reports, About)
+		// HOME SCREEN SELECTION (Submit Report, Existing Reports, About) [UNSURE IF WE NEED HISTORY FOR THESE]
 		else if (selectionTopBar == "a") { urgReport = true;							history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		else if (selectionTopBar == "b") { passChange = true;							history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		else if (selectionTopBar == "c") { abt = true;									history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		// Invalid Input
 		else { error("Invalid Input"); }
