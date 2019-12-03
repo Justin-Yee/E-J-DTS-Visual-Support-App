@@ -19,7 +19,7 @@ int sampleLng;																// Saves the minimum length of the sample (from '@
 string database[100] =
 { "kpatel@ejgallo.com", "bkandler@ejgallo.com", "markmcc2950@ejgallo.com", "jyee@ejgallo.com", "test@ejgallo.com" };
 string passwords[100] =
-{ "password", "password1", "password2", "password3" };
+{ "K;``#DYP", "K;``#DYPO", "K;``#DYPV", "K;``#DYP]" };
 // 0 = Admin, 1 = Vendor, 2 = Rest
 int classification[100] =
 { 2, 0, 1, 1, 0 };
@@ -83,7 +83,7 @@ void passCheck(int n) {
 	if (password.size() == passwords[index].size()) {
 		affine_encode(password);												// Encode the password inputted to our global string variable
 		password = encoded;														// Save the encoded password to our original variable here
-		//debug(password);														// Allows us to see what the password was encrypted to if it doesn't match what's in the file
+		debug(password);														// Allows us to see what the password was encrypted to if it doesn't match what's in the file
 		while (!validity3) {
 			// If no password saved, return error. (Shouldn't be able to get here without a password though)
 			if (passwords[index].empty()) {
@@ -156,7 +156,6 @@ void validityCheck(string v) {
 		// Check that we have @[domain] at the end (referenced against our sample)
 		for (int i = 0; i < sampleLng; i++) {
 			if (v[size - sampleLng + i] != sample[sample.size() - sampleLng + i]) {
-				cout << i << endl;
 				error("Invalid Username.");
 				validity1 = false;
 				break;
@@ -189,18 +188,18 @@ void domainLength(string s) {
 
 int main(void) {
 	domainLength(sample);																// Get the value minimum username length
-	// Encrypt Passwords for testing purposes
-	for (int i = 0; i < passwords->size(); i++) {
-		// If we reach an empty index, stop searching
-		if (passwords[i].empty()) {
-			break;
-		}
-		else {
-			affine_encode(passwords[i]);										// Encode the passwords
-			passwords[i] = encoded;												// Save the new passwords into the original array
-			//debug(passwords[i]);												// Debug way to verify encoded passwords match what we have in system
-		}
-	}
+	//// Encrypt Passwords for testing purposes
+	//for (int i = 0; i < passwords->size(); i++) {
+	//	// If we reach an empty index, stop searching
+	//	if (passwords[i].empty()) {
+	//		break;
+	//	}
+	//	else {
+	//		affine_encode(passwords[i]);										// Encode the passwords
+	//		passwords[i] = encoded;												// Save the new passwords into the original array
+	//		debug(passwords[i]);												// Debug way to verify encoded passwords match what we have in system
+	//	}
+	//}
 
 	string userName;
 	int errCtr = 0;																// Allows a certain amount of invalid usernames before terminating
@@ -210,7 +209,7 @@ int main(void) {
 		cin >> userName;
 
 		if (userName.size() > sampleLng && !userName.empty()) {
-			validityCheck(userName);	
+			validityCheck(userName);
 			if (validity1) nameCheck(userName);
 		}
 		if (!validity1) {
@@ -218,9 +217,9 @@ int main(void) {
 			if (errCtr >= 5) {
 				error("Invalid username.");
 			}
-		}		
-	}	
-	
+		}
+	}
+
 
 	if (validity1 && validity2 && validity3) {
 		cout << "Success!" << endl;
