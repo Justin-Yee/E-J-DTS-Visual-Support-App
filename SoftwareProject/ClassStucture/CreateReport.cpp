@@ -3,7 +3,10 @@
 CreateReport::CreateReport() {
 	// Set Default Values so as to not have Null entries in our Database
 
-	dtsID = 1;
+	dtsID = 1; // Generate from main.cpp no input required
+	reportStatus = "Open"; // status = Open once report is created
+
+	// Temporary values
 	workOrderNumber = 123456789;
 	materialGroup = "Empty";
 	defectName = "Empty";
@@ -18,7 +21,8 @@ CreateReport::CreateReport() {
 	itemNumber = 12345;
 	causeComment = "Empty";
 	actionComment = "Empty";
-	reportStatus = "Open";
+
+	inputReportInfo();
 }
 
 void CreateReport::setID(int id) {
@@ -82,7 +86,51 @@ void CreateReport::setStatus(string st) {
 void CreateReport::inputReportInfo() {
 	// Use input file or input stream to take in information from user
 	// Set class variables to the input
+	cout << "Creating Report" << endl; cout << "********************" << endl;
 
+	cout << "Enter the Work Order Number :\t\t" << endl;
+	cin >> workOrderNumber; cout << endl;
+
+	cout << "Enter the Material Group :\t\t" << endl;
+	cin >> materialGroup; cout << endl;
+
+	cout << "Enter the Name of the Defect :\t\t" << endl;
+	cin >> defectName; cout << endl;
+
+	cout << "Enter the Machine Line :\t\t" << endl;
+	cin >> machineLine; cout << endl;
+
+	cout << "Enter the Day :\t\t" << endl;
+	cin >> incidentDate.tm_mday; cout << endl;
+
+	cout << "Enter the Month :\t\t" << endl;
+	cin >> incidentDate.tm_mon; cout << endl;
+
+	cout << "Enter the Year :\t\t" << endl;
+	cin >> incidentDate.tm_year; cout << endl;
+
+	cout << "Enter the Incident Classification :\t\t" << endl;
+	cin >> incidentClassification; cout << endl;
+
+	cout << "Enter the Defect Classification :\t\t" << endl;
+	cin >> defectClassification; cout << endl;
+
+	cout << "Enter the Defect Severity :\t\t" << endl;
+	cin >> defectSeverity; cout << endl;
+
+	cout << "Enter the Supplier Name :\t\t" << endl;
+	cin >> supplierName; cout << endl;
+
+	cout << "Enter the Item Number :\t\t" << endl;
+	cin >> itemNumber; cout << endl;
+
+	cout << "Enter a Comment on the Cause :\t\t" << endl;
+	cin >> causeComment; cout << endl;
+
+	cout << "Enter a Recommended Action :\t\t" << endl;
+	cin >> actionComment; cout << endl;
+
+	cout << "********************" << endl; cout << "Report Created" << endl;
 }
 
 void CreateReport::pushToDB() {

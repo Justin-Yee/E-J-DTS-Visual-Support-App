@@ -13,8 +13,11 @@ public:
 	bool selectReports;
 	bool selectLogout;
 	bool selectContacts;
+	bool passChange;
+	string newPass;
 
 private:
+	string passwords[100]; // Dummy structure
 	bool subReport;
 	bool exReport;
 	bool urgReport;
@@ -23,6 +26,8 @@ private:
 	int maxHistory;
 	string history[1];
 	string selectionTopBar;
+	string encoded;
+	bool passUpdate;
 	User current;
 
 public:
@@ -31,7 +36,8 @@ public:
 
 	void debug(string d);
 	void error(string err);
-	void displayMain();
+	string affine_encode(string plaintext);
+	void displayMain(int index);
 	void displayCreate();
 	void displayList();
 	void displayUrgList();
