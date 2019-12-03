@@ -6,6 +6,7 @@ MainMenu::MainMenu(User x) {
 	subReport = false;
 	exReport = false;
 	urgReport = false;
+	passChange = false;
 	abt = false;
 	selectReports = false;
 	selectLogout = false;
@@ -13,6 +14,11 @@ MainMenu::MainMenu(User x) {
 	his = 0;
 	maxHistory = 10;
 	current = x;
+	passwords[0] = "K;``#DYP";
+	passwords[1] = "K;``#DYPO";
+	passwords[2] = "K;``#DYPV";
+	passwords[3] = "K;``#DYP]";
+	passUpdate = false;
 }
 
 void MainMenu::debug(string d) {
@@ -23,9 +29,39 @@ void MainMenu::error(string err) {
 	cout << "Error:\t" << err << endl;
 }
 
-void MainMenu::displayMain() {
+string MainMenu::affine_encode(string plaintext) {
+	int a = 7;
+	int b = 23;
+	int m = 89;
+	// Convert string to const char and find the size
+	string text = plaintext.data();
+	int size = text.length();
+	encoded.resize(size);
+
+	int intText[size];
+	int encText[size];
+
+	for (int i = 0; i < size; i++) {
+		if (text[i] != ' ') {
+			encText[i] = ((((int(text[i]) - 33) * a + b) % m) + 33);
+		}
+		else {
+			encText[i] = text[i];
+		}
+	}
+	char encrypted[size];
+
+	for (int i = 0; i < size; i++) {
+		encrypted[i] = char(encText[i]);
+		encoded[i] = encrypted[i];
+	}
+
+	return encrypted;
+}
+
+void MainMenu::displayMain(int index) {
 	// Top Bar selections (Home, Reports, About, Contact)
-	cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+	cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
 	while (selectHome) {
 		// UPCOMING REPORTS
 		if (urgReport) {
@@ -37,7 +73,46 @@ void MainMenu::displayMain() {
 			*/
 			urgReport = false;
 			history[his] = "1"; his = (his + 1) % maxHistory;
-			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+		}
+		// CHANGE PASSWORD
+		else if (passChange) {
+			string change;
+			debug("Change your password...");
+			cout << "Would you like to change your password? (Y/N)" << endl;
+			cin >> change;
+			if (change == "Y" || change == "y") {
+				string password;
+				string password2;
+				string password3;
+				debug("Changing password!");
+				cout << "Please enter current password:\t";
+				cin >> password;
+				affine_encode(password);
+				password = encoded;
+				bool passMatch = false;
+				if (passwords[index] == password){
+					debug("Password match!");
+					passMatch = true;
+					if (passMatch) {
+						cout << "Please enter your new password:\t";
+						cin >> password2;
+						cout << "Please re-enter your new password:\t";
+						cin >> password3;
+						if (password2 == password3) {
+							affine_encode(password2);
+							password2 = encoded;
+							passwords[index] = password2;
+							passUpdate = true;
+						}
+					}
+				}
+			}
+			else if (change == "N" || change == "n") {
+				debug("Not changing password...");
+					passChange = false;
+					cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			}
 		}
 		// ABOUT INFORMATION
 		else if (abt) {
@@ -45,7 +120,7 @@ void MainMenu::displayMain() {
 			displayAbout();
 			abt = false;
 			history[his] = "1"; his = (his + 1) % maxHistory;
-			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
+			cout << "\nTOP BAR:\n1. Home (Selected)\n\ta. Upcoming Reports\n\tb. Change Password\n\tc. About\n2. Reports\n3. Contact\n4. Logout\n";
 		}
 
 		// User input of where to navigate to
@@ -63,9 +138,14 @@ void MainMenu::displayMain() {
 
 		// HOME SCREEN SELECTION (Submit Report, Existing Reports, About)
 		else if (selectionTopBar == "a") { urgReport = true;							history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
+		else if (selectionTopBar == "b") { passChange = true;							history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		else if (selectionTopBar == "c") { abt = true;									history[his] = selectionTopBar; his = (his + 1) % maxHistory; }
 		// Invalid Input
 		else { error("Invalid Input"); }
+	}
+
+	if (passUpdate) {
+		newPass = passwords[index];
 	}
 }
 
