@@ -1,0 +1,12 @@
+<?xml version ="1.0" encoding="UTF-8" ?>
+
+<messages>
+	<message id="Wt.Auth.login-form-info">
+		Welcome to the DTS Trouble Tracker! Enter your email and password below to sign in.
+	</message>
+
+	<message id = "report.createNewReport">Create New Report</message> 
+
+	<message id = "report.viewReport">View Existing Reports </message>
+
+	<message id = "report.About">About </message>
