@@ -129,7 +129,14 @@ void validityCheck(string v) {
 	}
 }
 
-int main(void) {	
+int main(void) {
+try{
+
+	WServer server(argc, argv, WTHTTP_CONFIGURATION); //create server
+	server.addEntryPoint(EntryPointType::Application, createApplication);
+	server.run();//start the server
+
+
 	string userName;
 	
 	cout << "Username:\t";
@@ -147,6 +154,7 @@ int main(void) {
 	if (validity1 && validity2 && validity3) {
 		cout << "Success!" << endl;
 	}
+}
 }
 //------------------------------------------------------------------------------------------------------------
 // End code
