@@ -1,0 +1,171 @@
+﻿  main.cpp
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(266,20): warning C4251: 'Wt::Dbo::FieldInfo::name_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::FieldInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(266,30): warning C4251: 'Wt::Dbo::FieldInfo::sqlType_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::FieldInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(266,42): warning C4251: 'Wt::Dbo::FieldInfo::qualifier_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::FieldInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(267,30): warning C4251: 'Wt::Dbo::FieldInfo::foreignKeyName_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::FieldInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(267,48): warning C4251: 'Wt::Dbo::FieldInfo::foreignKeyTable_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::FieldInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(239,20): warning C4251: 'Wt::Dbo::AbstractQuery::join_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::AbstractQuery'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(239,28): warning C4251: 'Wt::Dbo::AbstractQuery::where_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::AbstractQuery'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(239,38): warning C4251: 'Wt::Dbo::AbstractQuery::groupBy_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::AbstractQuery'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(239,47): warning C4251: 'Wt::Dbo::AbstractQuery::having_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::AbstractQuery'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(239,57): warning C4251: 'Wt::Dbo::AbstractQuery::orderBy_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::AbstractQuery'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(248,49): warning C4251: 'Wt::Dbo::AbstractQuery::parameters_': class 'std::vector<Wt::Dbo::Impl::ParameterBase *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::AbstractQuery'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(248,49): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(248,49): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(248,49): warning C4251:             _Ty=Wt::Dbo::Impl::ParameterBase *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Query.h(248,49): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\ptr.h(98): message : see declaration of 'std::vector<Wt::Dbo::Impl::ParameterBase *,std::allocator<_Ty>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\ptr.h(98): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\ptr.h(98): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\ptr.h(98): message :             _Ty=Wt::Dbo::Impl::ParameterBase *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\ptr.h(98): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(317,31): warning C4251: 'Wt::Dbo::SqlConnection::statementCache_': class 'std::multimap<std::string,std::unique_ptr<Wt::Dbo::SqlStatement,std::default_delete<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::unique_ptr<_Ty,std::default_delete<_Ty>>>>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::SqlConnection'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(317,31): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(317,31): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(317,31): warning C4251:             _Ty=Wt::Dbo::SqlStatement,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(317,31): warning C4251:             _Kty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(317,31): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(315): message : see declaration of 'std::multimap<std::string,std::unique_ptr<Wt::Dbo::SqlStatement,std::default_delete<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::unique_ptr<_Ty,std::default_delete<_Ty>>>>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(315): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(315): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(315): message :             _Ty=Wt::Dbo::SqlStatement,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(315): message :             _Kty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(315): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318,49): warning C4251: 'Wt::Dbo::SqlConnection::properties_': class 'std::map<std::string,std::string,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::SqlConnection'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318,49): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318,49): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318,49): warning C4251:             _Kty=std::string,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318,49): warning C4251:             _Ty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318,49): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318): message : see declaration of 'std::map<std::string,std::string,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318): message :             _Kty=std::string,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318): message :             _Ty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(318): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(319,40): warning C4251: 'Wt::Dbo::SqlConnection::statefulSql_': class 'std::vector<std::string,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::SqlConnection'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(319,40): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(319,40): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(319,40): warning C4251:             _Ty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlConnection.h(319,40): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message : see declaration of 'std::vector<std::string,std::allocator<_Ty>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :             _Ty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(38,22): warning C4251: 'Wt::Dbo::Impl::SetInfo::joinName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::SetInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(39,24): warning C4251: 'Wt::Dbo::Impl::SetInfo::joinSelfId': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::SetInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(39,37): warning C4251: 'Wt::Dbo::Impl::SetInfo::joinOtherId': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::SetInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(56,32): warning C4251: 'Wt::Dbo::Impl::MappingInfo::naturalIdFieldName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::MappingInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(59,25): warning C4251: 'Wt::Dbo::Impl::MappingInfo::idCondition': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::MappingInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(61,31): warning C4251: 'Wt::Dbo::Impl::MappingInfo::fields': class 'std::vector<Wt::Dbo::FieldInfo,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::MappingInfo'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(61,31): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(61,31): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(61,31): warning C4251:             _Ty=Wt::Dbo::FieldInfo
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(61,31): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(303): message : see declaration of 'std::vector<Wt::Dbo::FieldInfo,std::allocator<_Ty>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(303): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(303): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(303): message :             _Ty=Wt::Dbo::FieldInfo
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(303): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62,27): warning C4251: 'Wt::Dbo::Impl::MappingInfo::sets': class 'std::vector<Wt::Dbo::Impl::SetInfo,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::MappingInfo'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62,27): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62,27): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62,27): warning C4251:             _Ty=Wt::Dbo::Impl::SetInfo
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62,27): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62): message : see declaration of 'std::vector<Wt::Dbo::Impl::SetInfo,std::allocator<_Ty>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62): message :             _Ty=Wt::Dbo::Impl::SetInfo
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(62): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(64,37): warning C4251: 'Wt::Dbo::Impl::MappingInfo::statements': class 'std::vector<std::string,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of struct 'Wt::Dbo::Impl::MappingInfo'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(64,37): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(64,37): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(64,37): warning C4251:             _Ty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(64,37): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message : see declaration of 'std::vector<std::string,std::allocator<_Ty>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :             _Ty=std::string
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\SqlTraits.h(302): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(510,36): warning C4251: 'Wt::Dbo::Session::longlongType_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::Session'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(511,31): warning C4251: 'Wt::Dbo::Session::intType_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::Session'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(558,31): warning C4251: 'Wt::Dbo::Session::classRegistry_': class 'std::map<Wt::Dbo::Session::const_typeinfo_ptr,Wt::Dbo::Impl::MappingInfo *,Wt::Dbo::Session::typecomp,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::Session'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(558,31): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(558,31): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(558,31): warning C4251:             _Kty=Wt::Dbo::Session::const_typeinfo_ptr,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(558,31): warning C4251:             _Ty=Wt::Dbo::Impl::MappingInfo *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(558,31): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(554): message : see declaration of 'std::map<Wt::Dbo::Session::const_typeinfo_ptr,Wt::Dbo::Impl::MappingInfo *,Wt::Dbo::Session::typecomp,std::allocator<std::pair<const _Kty,_Ty>>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(554): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(554): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(554): message :             _Kty=Wt::Dbo::Session::const_typeinfo_ptr,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(554): message :             _Ty=Wt::Dbo::Impl::MappingInfo *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(554): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(559,31): warning C4251: 'Wt::Dbo::Session::tableRegistry_': class 'std::map<std::string,Wt::Dbo::Impl::MappingInfo *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::Session'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(559,31): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(559,31): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(559,31): warning C4251:             _Kty=std::string,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(559,31): warning C4251:             _Ty=Wt::Dbo::Impl::MappingInfo *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(559,31): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(556): message : see declaration of 'std::map<std::string,Wt::Dbo::Impl::MappingInfo *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(556): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(556): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(556): message :             _Kty=std::string,
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(556): message :             _Ty=Wt::Dbo::Impl::MappingInfo *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(556): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565,42): warning C4251: 'Wt::Dbo::Session::objectsToAdd_': class 'std::vector<Wt::Dbo::MetaDboBase *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::Session'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565,42): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565,42): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565,42): warning C4251:             _Ty=Wt::Dbo::MetaDboBase *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565,42): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565): message : see declaration of 'std::vector<Wt::Dbo::MetaDboBase *,std::allocator<_Ty>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565): message :             _Ty=Wt::Dbo::MetaDboBase *
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(565): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(566,45): warning C4251: 'Wt::Dbo::Session::connection_': class 'std::unique_ptr<Wt::Dbo::SqlConnection,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::Session'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(566,45): warning C4251:         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(566,45): warning C4251:         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(566,45): warning C4251:             _Ty=Wt::Dbo::SqlConnection
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Session.h(566,45): warning C4251:         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Transaction.h(147): message : see declaration of 'std::unique_ptr<Wt::Dbo::SqlConnection,std::default_delete<_Ty>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Transaction.h(147): message :         with
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Transaction.h(147): message :         [
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Transaction.h(147): message :             _Ty=Wt::Dbo::SqlConnection
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Transaction.h(147): message :         ]
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\DbAction.h(63,31): warning C4251: 'Wt::Dbo::InitSchema::foreignKeyTable_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::InitSchema'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\DbAction.h(63,48): warning C4251: 'Wt::Dbo::InitSchema::foreignKeyName_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::InitSchema'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Exception.h(25,1): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'Wt::Dbo::Exception'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\stdexcept(123): message : see declaration of 'std::runtime_error'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Exception.h(24): message : see declaration of 'Wt::Dbo::Exception'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\Exception.h(44,20): warning C4251: 'Wt::Dbo::Exception::code_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::Exception'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\Wt 4.1.2 msvs2019 x86\include\Wt\Dbo\backend\Sqlite3.h(131,20): warning C4251: 'Wt::Dbo::backend::Sqlite3::conn_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Wt::Dbo::backend::Sqlite3'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4440): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\Bailey\source\repos\DefTracker\DefTracker\main.cpp(328,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Bailey\source\repos\DefTracker\DefTracker\main.cpp(436,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Bailey\source\repos\DefTracker\DefTracker\main.cpp(448,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Bailey\source\repos\DefTracker\DefTracker\main.cpp(455,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Bailey\source\repos\DefTracker\DefTracker\main.cpp(702,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Bailey\source\repos\DefTracker\DefTracker\main.cpp(762,23): warning C4018: '>': signed/unsigned mismatch
+  DefTracker.vcxproj -> C:\Users\Bailey\source\repos\DefTracker\Debug\DefTracker.exe
