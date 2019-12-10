@@ -23,6 +23,7 @@ Following is the Layout of the Program
 	b. Change Password
 	c. About
   2. Reports
+	
 	a. Submit Report
 	b. Existing Reports
 	c. Historical Data
