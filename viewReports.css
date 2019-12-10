@@ -1,0 +1,42 @@
+ul{
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+	background-color: #333333;
+}
+li{
+	display: inline-block;
+	margin-right: 20px;
+	color:white;
+}
+
+li a{
+	display: block;
+	color: white;
+	text-align: center;
+
+}
+
+table{
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 18px;
+	text-align: center;
+	border: inset;
+}
+
+table tr#ROW1{background-color: red;}
+table tr#ROW2{background-color: yellow;}
+table tr#ROW3{background-color: green;}
+
+th{
+	background-color: #3399ff;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2
+}
+
+td{
+	border:solid 2px;
+}
