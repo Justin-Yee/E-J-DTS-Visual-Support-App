@@ -12,8 +12,6 @@ C/C++ -> General -> Additional Include Directories -> (Wt 4.1.2 msvs2019 x86/inc
 
 Linker -> General -> Additional Library Directories -> (Wt 4.1.2 msvs2019 x86/lib)
 
-Linker -> Input -> Additional Dependencies -> (wtd.lib, wthttpd.lib, wtdbod.lib, wtdbosqlite3d.lib, wtdbo.lib, wtdbosqlite3.lib)
-
 Run the Solution to use Output Stream to interact with Program
 
 Following is the Layout of the Program
