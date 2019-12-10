@@ -41,6 +41,7 @@ struct NewReport{
 		// Use input file or input stream to take in information from user
 		// Set class variables to the input
 		cout << "Creating Report" << endl; cout << "********************" << endl;
+		cout << "Please only use single word inputs." << endl;
 
 		cout << "Enter the Work Order Number :\t\t";		cin >> workOrderNumber;
 		cout << "Enter the Material Group :\t\t";			cin >> materialGroup; 
@@ -82,7 +83,7 @@ struct Report {
 		// Output of Full Report Information
 		cout << "********************" << endl;
 
-		cout << "DTS ID :\t\t\t" << dtsID << "\nWork Order Number : \t\t" << workOrderNumber << endl;
+		cout << "DTS ID :\t\t\t" << dtsID + 1 << "\nWork Order Number : \t\t" << workOrderNumber << endl;
 		cout << "Material Group :\t\t" << materialGroup << "\nDefect Name :\t\t\t" << defectName << endl;
 		cout << "Current Status :\t\t" << reportStatus << endl;
 
@@ -92,11 +93,11 @@ struct Report {
 		// Output of Full Report Information
 		cout << "********************" << endl;
 
-		cout << "DTS ID :\t\t\t" << dtsID << "\nWork Order Number : \t\t" << workOrderNumber << endl;
+		cout << "DTS ID :\t\t\t" << dtsID + 1 << "\nWork Order Number : \t\t" << workOrderNumber << endl;
 		cout << "Material Group :\t\t" << materialGroup << "\nDefect Name \t\t\t" << defectName << endl;
 		cout << "Current Status :\t\t" << reportStatus << endl;
 		cout << "Machine Line :\t\t\t" << machineLine << endl;
-		cout << "Incident Date :\t\t\t" << incidentDate.tm_mon << " " << incidentDate.tm_mday << ", " << incidentDate.tm_year << endl;
+		cout << "Incident Date :\t\t\t" << incidentDate.tm_mon << "/" << incidentDate.tm_mday << "/" << incidentDate.tm_year << endl;
 		cout << "Incident Classification :\t" << incidentClassification << "\nDefect Classification :\t\t" << defectClassification << endl;
 		cout << "Defect Severity :\t\t" << defectSeverity << endl;
 		cout << "Supplier :\t\t\t" << supplierName << "\nItem Number :\t\t\t" << itemNumber << endl;
@@ -141,6 +142,8 @@ bool passUpdate = false; bool passChange = false; string newPass;
 // Login 
 string sample = "username@ejgallo.com"; int sampleLng = 0;
 string database[100] = { "kpatel@ejgallo.com", "bkandler@ejgallo.com", "markmcc2950@ejgallo.com", "jyee@ejgallo.com", "test@ejgallo.com" };
+string names[100] = { "Krishan Patel", "Bailey Kandler", "Mark McCullough", "Justin Yee", "Test Dummy" };
+string phone[100] = { "209-999-9999", "951-555-5555", "530-777-7777", "805-888-8888", "123-456-7890" };
 string passwords[100] = { "K;``#DYP", "K;``#DYPO", "K;``#DYPV", "K;``#DYP]" };
 string encoded;
 int classification[100] = { 2, 0, 1, 1, 0 };
@@ -347,7 +350,7 @@ void passCheck(int n) {
 	if (password.size() == passwords[index].size()) {
 		password = affine_encode(password);										// Encode the password inputted to our global string variable
 		password = encoded;														// Save the encoded password to our original variable here
-		//debug(password);
+		debug(password);
 		while (!validity3) {
 			// If no password saved, return error. (Shouldn't be able to get here without a password though)
 			if (passwords[index].empty()) {
@@ -361,10 +364,10 @@ void passCheck(int n) {
 					validity3 = true;
 					break;
 				}
-				else {
-					error("Invalid Password.");
-					break;
-				}
+			}
+			else {
+				error("Invalid Password.");
+				break;
 			}
 		}
 	}
@@ -436,7 +439,7 @@ void displayHistory(int itemNum, User* c) {
 	for (int i = 0; i < histList.size(); i++) {
 		if (histList[i]->itemNumber == itemNum) {
 			cout << "********************" << endl;
-			cout << "Item Number :\t\t" << itemNum << endl;
+			cout << "Item Number :\t" << itemNum << endl;
 			cout << "Supplier :\t" << histList[i]->supplierName << "\nMachine Line :\t" << histList[i]->machineLine << endl;
 			cout << "********************" << endl;
 		}
@@ -494,11 +497,15 @@ void displayLogout() {
 	}
 }
 void displayContact() {
-	cout << "\nTOP BAR:\n1. Home\n2. Reports\n3. Contact (Selected)\n4. Logout\n";
+	cout << "\nTOP BAR:\n1. Home\n2. Reports\n3. Contact (Selected)\n";
 	while (selectContacts) {
-		cout << current.email << endl;
-		cout << current.name << endl;
+		history[his] = "3"; his = (his + 1) % maxHistory;
+		cout << "\t\t" << current.name << endl;
+		cout << "\t\t" << current.email << endl;
+		cout << "\t\t" << phone[index] << endl;
+		cout << "4. Logout\n";
 		cout << "\t\t\t";
+		
 		cin >> selectionTopBar;
 		// TOP BAR SELECTION (Home, Reports, Contacts, Logout)
 		// Home
@@ -529,7 +536,7 @@ void displayReport() {
 			displayCreate(); // Function to take Input and send it to a Report Object and the Database
 
 			subReport = false;
-			history[his] = "1"; his = (his + 1) % maxHistory;
+			history[his] = "2"; his = (his + 1) % maxHistory;
 			cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. Historical Data\n\td. Individual Report\n3. Contact\n4. Logout\n";
 		}
 		// EXISTING REPORTS
@@ -558,29 +565,29 @@ void displayReport() {
 			displayList(&current); // Function to display the list of Reports
 
 			exReport = false;
-			history[his] = "1"; his = (his + 1) % maxHistory;
+			history[his] = "2"; his = (his + 1) % maxHistory;
 			cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. Historical Data\n\td. Individual Report\n3. Contact\n4. Logout\n";
 		}else if (hisReport) {
 			int d;
-			cout << "Enter Item Number your would like to View History for :\t";
+			cout << "Enter Item Number to Look Up:\t";
 			cin >> d;
-			debug("Report History of Item Number : " + d);
+			debug("Report Number: " + d);
 			
-			displayHistory(d, &current);
+			displayHistory(d - 1, &current);
 
 			subReport = false;
-			history[his] = "1"; his = (his + 1) % maxHistory;
+			history[his] = "2"; his = (his + 1) % maxHistory;
 			cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. Historical Data\n\td. Individual Report\n3. Contact\n4. Logout\n";
 		}else if (indivReport) {
 			int d;
-			cout << "There are : " << fullList.size() << " Reports you can View." << endl;
-			cout << "Enter the number of the Report you would like to view :\t";
+			cout << "There are : " << fullList.size() << " reports you can view." << endl;
+			cout << "Enter Report Number to Look Up:\t";
 			cin >> d;
 
-			fullList[d]->printFullReport();
+			fullList[d - 1]->printFullReport();
 
 			subReport = false;
-			history[his] = "1"; his = (his + 1) % maxHistory;
+			history[his] = "2"; his = (his + 1) % maxHistory;
 			cout << "\nTOP BAR:\n1. Home\n2. Reports (Selected)\n\ta. Submit Report\n\tb. Existing Reports\n\tc. Historical Data\n\td. Individual Report\n3. Contact\n4. Logout\n";
 		}
 
@@ -652,6 +659,8 @@ void displayMain(int index) {
 							password2 = encoded;
 							passwords[index] = password2;
 							passUpdate = true;
+							passChange = false;
+							break;
 						}
 					}
 				}
@@ -752,6 +761,10 @@ int main() {
 	// Login Logic
 	domainLength(sample);
 
+	for (int i = 0; i < 4; i++) {
+		cout << passwords[i] << endl;
+	}
+
 	string userName;
 	int errCtr = 0;																// Allows a certain amount of invalid usernames before terminating
 	bool nameVerify = true;														// Small loop to input username as valid
@@ -772,44 +785,51 @@ int main() {
 	}
 	if (validity1 && validity2 && validity3) {
 		cout << "Success!" << endl;
+		
+		current.email = userName;
+		current.name = names[index];
+		fullList.resize(20); histList.resize(20); urgList.resize(20); fillData(); // Temporary Resizing & Data Fill (while Database calls are bugged)	
+		//current = retrieveUser(userName); // Use input to get Current User Info from Database
+		//dts_id_index = retrieveCurrID(); // Get the current DTS ID so that any new Reports can generate a unique ID
+
+		// Main Menu Logic
+		/*
+		MAIN MENU (After Login):
+			1. Home
+				a. Upcoming Reports (What's due within the next n-days)
+				b. Change Password
+				c. About
+			2. Reports
+				a. Submit Report
+				b. Existing Reports
+				c. Historical Data
+				d. Individual Report
+			3. Contact
+			4. Logout
+		*/
+
+		while (running) {
+			if (selectHome) {
+				displayMain(index);
+			}
+			else if (selectReports) {
+				displayReport();
+			}
+			else if (selectContacts) {
+				displayContact();
+			}
+			else if (selectLogout) {
+				displayLogout();
+			}
+		}
 	}
 
-	current.email = userName;
-	fullList.resize(20); histList.resize(20); urgList.resize(20); fillData(); // Temporary Resizing & Data Fill (while Database calls are bugged)	
-	//current = retrieveUser(userName); // Use input to get Current User Info from Database
-	//dts_id_index = retrieveCurrID(); // Get the current DTS ID so that any new Reports can generate a unique ID
+	
 
-	// Main Menu Logic
-	/*
-	MAIN MENU (After Login):
-		1. Home
-			a. Upcoming Reports (What's due within the next n-days)
-			b. Change Password
-			c. About
-		2. Reports
-			a. Submit Report
-			b. Existing Reports
-			c. Historical Data
-			d. Individual Report
-		3. Contact
-		4. Logout
-	*/
-
-	while (running) {
-		if (selectHome) {
-			displayMain(index);
-		}
-		else if (selectReports) {
-			displayReport();
-		}
-		else if (selectContacts) {
-			displayContact();
-		}
-		else if (selectLogout) {
-			displayLogout();
-		}
+	if (passUpdate) {
+		updatePassword(index, newPass);
 	}
-	updatePassword(index, newPass);
+	
 
 	return 1;
 }
