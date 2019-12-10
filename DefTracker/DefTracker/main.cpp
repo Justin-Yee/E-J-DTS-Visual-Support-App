@@ -132,7 +132,7 @@ User current; int index = 0;
 int dts_id_index = 1;
 
 // Main Menu
-bool running = true;
+bool loggedIn = false; bool running = true;
 bool selectHome = true; bool selectReports = false; bool selectLogout = false; bool selectContacts = false;
 bool subReport = false; bool exReport = false; bool hisReport = false; bool indivReport = false; bool urgReport = false; bool abt = false;
 int his = 0; int maxHistory = 10; string history[10];
@@ -144,7 +144,7 @@ string sample = "username@ejgallo.com"; int sampleLng = 0;
 string database[100] = { "kpatel@ejgallo.com", "bkandler@ejgallo.com", "markmcc2950@ejgallo.com", "jyee@ejgallo.com", "test@ejgallo.com" };
 string names[100] = { "Krishan Patel", "Bailey Kandler", "Mark McCullough", "Justin Yee", "Test Dummy" };
 string phone[100] = { "209-999-9999", "951-555-5555", "530-777-7777", "805-888-8888", "123-456-7890" };
-string passwords[100] = { "K;``#DYP", "K;``#DYPO", "K;``#DYPV", "K;``#DYP]" };
+string passwords[100] = { "m;(WY`^sW/POV", "tDYD=;.y", "9;lDW'.", "K;``#DYP]" };
 string encoded;
 int classification[100] = { 2, 0, 1, 1, 0 };
 bool validity1 = false; bool validity2 = false; bool validity3 = false;
@@ -477,7 +477,7 @@ void displayLogout() {
 		if (logout == "Y" || logout == "y") {
 			debug("Successfully Logged Out!");
 			selectLogout = false;
-			running = false;
+			loggedIn = false;
 		}
 		else if (logout == "N" || logout == "n") {
 			debug("Not logging out");
@@ -658,12 +658,14 @@ void displayMain(int index) {
 							password2 = affine_encode(password2);
 							password2 = encoded;
 							passwords[index] = password2;
+							debug(password2);
 							passUpdate = true;
 							passChange = false;
 							break;
 						}
 					}
 				}
+				else { error("Password doesn't match."); passChange = false; break; }
 			}
 			else if (change == "N" || change == "n") {
 				debug("Not changing password...");
@@ -749,85 +751,94 @@ void fillData() {
 // Control the Program
 int main() {
 	
-	cout << "Connecting to Database ... " << endl;
+	debug("Connecting to Database ... ");
 	// Connect to the Database	
 	unique_ptr<dbo::backend::Sqlite3> sqlite3{ new dbo::backend::Sqlite3("E-G_DTS_DB_Test.db") };
 	session->setConnection(move(sqlite3));	
-	cout << "Connected to Database." << endl;
-	cout << "Mapping DB Relations to Session ... " << endl;
-	session->mapClass<User>("User_Relation"); cout << "User_Relation mapped." << endl;
-	session->mapClass<Report>("Report"); cout << "Report mapped." << endl;
+	debug("Connected to Database.");
+	debug("Mapping DB Relations to Session ... ");
+	session->mapClass<User>("User_Relation"); 
+	debug("User_Relation mapped.");
+	session->mapClass<Report>("Report"); 
+	debug("Report mapped.");
 
 	// Login Logic
 	domainLength(sample);
-
+	debug("Showing Stored Passwords...");
 	for (int i = 0; i < 4; i++) {
 		cout << passwords[i] << endl;
 	}
+	debug("Finished Debug. Beginning Program:\n");
 
-	string userName;
-	int errCtr = 0;																// Allows a certain amount of invalid usernames before terminating
-	bool nameVerify = true;														// Small loop to input username as valid
-	while (!validity1 && errCtr <= 5) {
-		cout << "Username:\t";
-		cin >> userName;
+	while (running) {
+		validity1 = false, validity2 = false; validity3 = false;
+		string userName;
+		int errCtr = 0;																// Allows a certain amount of invalid usernames before terminating
+		bool nameVerify = true;														// Small loop to input username as valid
+		while (!validity1 && errCtr <= 5) {
+			cout << "Username:\t";
+			cin >> userName;
 
-		if (userName.size() > sampleLng && !userName.empty()) {
-			validityCheck(userName);
-			if (validity1) nameCheck(userName);
-		}
-		if (!validity1) {
-			errCtr++;
-			if (errCtr >= 5) {
-				error("Invalid username.");
+			if (userName.size() > sampleLng && !userName.empty()) {
+				validityCheck(userName);
+				if (validity1) nameCheck(userName);
+			}
+			if (!validity1) {
+				errCtr++;
+				if (errCtr >= 5) {
+					error("Invalid username.");
+				}
 			}
 		}
-	}
-	if (validity1 && validity2 && validity3) {
-		cout << "Success!" << endl;
-		
-		current.email = userName;
-		current.name = names[index];
-		fullList.resize(20); histList.resize(20); urgList.resize(20); fillData(); // Temporary Resizing & Data Fill (while Database calls are bugged)	
-		//current = retrieveUser(userName); // Use input to get Current User Info from Database
-		//dts_id_index = retrieveCurrID(); // Get the current DTS ID so that any new Reports can generate a unique ID
+		if (validity1 && validity2 && validity3) {
+			selectLogout = false;
+			selectHome = true;
+			loggedIn = true;
+			cout << "Success!" << endl;
 
-		// Main Menu Logic
-		/*
-		MAIN MENU (After Login):
-			1. Home
-				a. Upcoming Reports (What's due within the next n-days)
-				b. Change Password
-				c. About
-			2. Reports
-				a. Submit Report
-				b. Existing Reports
-				c. Historical Data
-				d. Individual Report
-			3. Contact
-			4. Logout
-		*/
+			current.email = userName;
+			current.name = names[index];
+			fullList.resize(20); histList.resize(20); urgList.resize(20); fillData(); // Temporary Resizing & Data Fill (while Database calls are bugged)	
+			//current = retrieveUser(userName); // Use input to get Current User Info from Database
+			//dts_id_index = retrieveCurrID(); // Get the current DTS ID so that any new Reports can generate a unique ID
 
-		while (running) {
-			if (selectHome) {
-				displayMain(index);
-			}
-			else if (selectReports) {
-				displayReport();
-			}
-			else if (selectContacts) {
-				displayContact();
-			}
-			else if (selectLogout) {
-				displayLogout();
+			// Main Menu Logic
+			/*
+			MAIN MENU (After Login):
+				1. Home
+					a. Upcoming Reports (What's due within the next n-days)
+					b. Change Password
+					c. About
+				2. Reports
+					a. Submit Report
+					b. Existing Reports
+					c. Historical Data
+					d. Individual Report
+				3. Contact
+				4. Logout
+			*/
+
+			while (loggedIn) {
+				if (selectHome) {
+					displayMain(index);
+				}
+				else if (selectReports) {
+					displayReport();
+				}
+				else if (selectContacts) {
+					displayContact();
+				}
+				else if (selectLogout) {
+					displayLogout();
+				}
 			}
 		}
-	}
 
-	
 
-	if (passUpdate) {
-		updatePassword(index, newPass);
+
+		if (passUpdate) {
+			updatePassword(index, newPass);
+		}
 	}
 	
 
