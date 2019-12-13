@@ -1,0 +1,25 @@
+body{
+	font-family: times new roman;
+}
+
+h1{
+	text-align: center;
+}
+
+.reports table{ /*Controls the tables outside parts*/
+	width: 40ex;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	border-style: solid;
+	border-color: #999;
+	border-width: 2px;
+	color: #333;
+}
+
+.reports td, th{ /*Controls the borders within the table*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	padding: 3px;
+}

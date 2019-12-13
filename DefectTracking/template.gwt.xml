@@ -1,0 +1,19 @@
+public class Home implements EntryPoint{
+	public void onModuleLoad{
+		MenuBar menu = new MenuBar(false); //create horizontal menu bar
+		Command cmd = new Command(){
+			@Override
+			public void execute(){
+				Window.alert("clicked button");
+			}
+		}; //command when button is pushed
+
+		menu.addItem(new MenuItem("Home", cmd));
+		menu.addItem(new MenuItem("Reports", cmd));
+		menu.addItem(new MenuItem("Contact", cmd));
+		menu.addItem(new MenuItem("Logout", cmd));
+
+		RootPanel.get().add(menu);
+
+	}
+}
