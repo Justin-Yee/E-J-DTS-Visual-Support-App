@@ -1,0 +1,4 @@
+TextBox normalText = new TextBox(); //create a normal textbox
+normalText.setDirectionEstimator(AnyRtlDirectionEstimator.get()); //expand the length of the text box as needed
+
+PasswordTextBox normalPassword = new PasswordTextBox();

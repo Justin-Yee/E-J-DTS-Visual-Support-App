@@ -1,0 +1,39 @@
+ul{
+	display: inline-block;
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+	background-color: #333333;
+}
+li{
+	display: inline-block;
+	margin-right: 5px;
+	color:white;
+}
+
+li a{
+	display: block;
+	color: white;
+	text-align: center;
+
+}
+
+.report form{/*Allows horizontal form*/
+	display: flex;
+	flex-flow: row wrap;
+	
+}
+
+.report select{
+	margin-right: 20px;
+	margin-top: 15px;
+}
+
+.report input[type="submit"]{
+	margin-top: 15px;
+}
+
+.report input[type="text"]{
+	margin-right: 15px;
+	width: 240px;
+}
